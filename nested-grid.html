@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasted Grid</title>
+<style>
+
+    .grid-container>div{
+        /*Giving divs background, border and padding*/
+        padding: 1em;
+        background-color: lightgray;
+        border: 2px solid orange;
+    }
+    .grid-container>div:nth-child(odd){
+        /*alternate colors*/
+        background-color: gray;
+    }
+    .grid-container{
+        /*making parent div as grid*/
+        display: grid;
+        grid-template-columns: repeat(2,1fr);/*two equal width columns*/
+        grid-gap: 1em;
+        grid-auto-rows: minmax(10em,auto);
+        /* justify-items: start;
+        align-items: start; */
+    }
+    #div1{
+        display: grid;/*Grid inside grid*/
+        grid-template-columns: repeat(2,1fr);
+        justify-items: stretch;
+        align-items: stretch;
+    }
+    #div1 *{
+        border: 1px double yellow;/*border to see default padding of grid*/
+    }
+</style>
+
+</head>
+<body>
+    <div class="grid-container">
+        <div id="div1">
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+            
+        </div>
+        <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, nobis! 2</div>
+        <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, nobis! 3</div>
+        <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, nobis! 4</div>
+        <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, nobis! 5</div>
+    </div>
+</body>
+</html>

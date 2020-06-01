@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Grid</title>
+<style>
+
+    /*giving child divs background color*/
+    .grid-container>div{
+        padding: 1em;
+        background-color: lightgray;
+        border: 2px solid orange;
+    }
+    /*giving alternate colors*/
+    .grid-container>div:nth-child(odd){
+        background-color: gray;
+    }
+    .grid-container{
+        display: grid;/*makes container as grid*/
+        grid-template-columns: repeat(2,1fr);/*2 rows with equal spacing */
+        grid-gap: 1em;/*gap between rows and columns*/
+        grid-auto-rows: minmax(5em,auto);/*manages dymically #rows and gives min height, avoids content overflow*/
+        /* justify-items: start;
+        align-items: start; */
+    }
+    /* #div1{
+        justify-self: stretch; --default values--
+        align-self: stretch;
+    } */
+</style>
+
+</head>
+<body>
+    <div class="grid-container">
+        <div id="div1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, nobis! 1</div>
+        <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, nobis! 2</div>
+        <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, nobis! 3</div>
+        <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, nobis! 4</div>
+        <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, nobis! 5</div>
+    </div>
+</body>
+</html>
